@@ -1,0 +1,15 @@
+$("#user_<%= @user.id %>").html("<%= j(render 'follows/follow-btn', user: @user) %>");
+$(".followers-count").html("<%= j(render 'follows/followers-count', user: @user) %>");
+<!--＄$((".followers-count").html＃#= link_to @user.followers.count, user_followers_path(@user) %>")-->
+
+
+<!--$(".followers-count").html("<%#= @user.followers.count %>")-->
+<!--$(".followers-count").html("<%#= link_to @user.followers.count, root_path %>")-->
+
+<!--クラスが読み込めていないか、変数が渡せていない為-->
+
+<!--洪OOさん-->
+<!--部分テンプレートの指定はいくつかあるがrendreでくくり指定するのがベター-->
+<!--idは一覧で複数個ある中から個別に指定したい場合、クラスはその中で指定か始めから1つしかない場合-->
+<!--↑現時点ではそこまで気にしなくていい-->
+<!--1つのタブにidとクラスを定義して指定することはできないRubyのルール-->

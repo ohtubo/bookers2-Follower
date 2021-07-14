@@ -8,17 +8,16 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
-  <tr>
+  <tr id = "a">
     <th>follows</th>
-    <th><%= link_to user.followings.count, user_followings_path(user) %></th>
+    <th class='follows-count'><%= link_to user.followings.count, user_followings_path(user) %></th>
   </tr>
-  <tr>
-    <th>followers</th>
-    <th><%= link_to user.followers.count, user_followers_path(user) %></th>
+  <tr class='followers-count'>
+    <%= render 'follows/followers-count', user: user %>
   </tr>
 </table>
 
-<p id="user_<%= user.id %>" class='follow-btn'>
+<p id="user_<%= user.id %>">
     <%= render 'follows/follow-btn', user: user %>
 </p>
 
